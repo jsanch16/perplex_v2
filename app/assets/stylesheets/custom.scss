@@ -1,0 +1,357 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: font-url('OpenSans-Regular-webfont.eot');
+    src: font-url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('OpenSans-Regular-webfont.woff') format('woff'),
+         font-url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         font-url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'pt_sansregular';
+    src: font-url('PTS55F-webfont.eot');
+    src: font-url('PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('PTS55F-webfont.woff') format('woff'),
+         font-url('PTS55F-webfont.ttf') format('truetype'),
+         font-url('PTS55F-webfont.svg#pt_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+$perplex-purple: #684FB6;
+$perplex-darkpurple: #544193;
+$perplex-darkpurple2: #443477;
+$navbar-color: white;
+$perplex-gray: #e9eaed;
+
+/* universal */
+
+* {
+  border-radius: 0 !important;
+}
+
+
+
+
+
+
+body {
+  padding-top: 60px;
+  background: $perplex-gray;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-family: 'pt_sansregular', Georgia, Times, serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $perplex-purple;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+.navbar-perplex {
+  background-color: $navbar-color;
+}
+.navbar-default .navbar-nav > li > a {
+	color: $perplex-purple;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $perplex-purple;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+/* workout randomizer form */
+
+#generateBtn { 
+background-color: $perplex-purple;
+border-color: $perplex-purple;	
+font-size: 17px;
+}
+
+.tab-pane h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $perplex-purple;
+}
+
+
+.panel {
+	border-color: #e9eaed;
+	margin-top: 80px;
+  	margin-bottom: 80px;
+}
+.panel > .panel-heading {
+    background-image: none;
+    background-color: $perplex-purple;
+    border-color: $perplex-purple;
+    color: white;
+
+}
+
+
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+
+/********************************************************************/
+/*** PANEL PRIMARY ***/
+.with-nav-tabs.panel-primary .nav-tabs > li > a,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #fff;
+}
+.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+	color: #fff;
+	background-color: $perplex-darkpurple;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+	color: $perplex-purple;
+	background-color: #fff;
+	border-color: $perplex-purple;
+	border-bottom-color: transparent;
+}
+
+/**********/
+/* Results Panel */
+#workoutResults {
+	display:none;/*should start out as hidden*/
+	margin-top: 20px;
+  	margin-bottom: 80px;
+}
+#workoutResults ul {
+    padding: 0;
+    margin: 20px 0;
+    color: #555;
+}
+#workoutResults ul > li {
+    list-style: none;
+    border-top: 1px solid #ddd;
+    display: block;
+    padding: 15px;
+    overflow: hidden;
+}
+#workoutResults ul:last-child {
+    border-bottom: 1px solid #ddd;
+}
+#workoutResults ul > li:hover {
+    background: #efefef;
+}
+.expand {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+}
+li h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+}
+span {
+    font-size: 12.5px;
+}
+#left,#right{
+    display: table;
+}
+#sup{
+    display: table-cell;
+    vertical-align: middle;
+    width: 80%;
+}
+.detail a {
+    text-decoration: none;
+    color: #C0392B;
+    border: 1px solid #C0392B;
+    padding: 6px 10px 5px;
+    font-size: 14px;
+}
+.detail {
+    margin: 10px 0 10px 0px;
+    display: none;
+    line-height: 22px;
+    height: 150px;
+}
+.detail span{
+    margin: 0;
+}
+.right-arrow {
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 10px;
+    height: 100%;
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+.icon {
+    height: 75px;
+    width: 75px;
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+
+/***** Spinner  ****/
+input[type=number] {
+  float: left;
+  width: 70px;
+  height: 35px;
+  padding: 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $perplex-purple;
+  border: 2px $perplex-purple solid;
+  background: none;
+  outline: none;
+  pointer-events: none;
+}
+
+span.spinner {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+span.spinner > .sub,
+span.spinner > .add {
+  background: $perplex-purple;
+  float: left;
+  display: block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 33px;
+  color: white;
+  border: 2px $perplex-purple solid;
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+  cursor: pointer;
+  transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  -ms-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  -webkit-transition: 0.1s linear;
+}
+
+span.spinner > .add {
+  top: 0;
+  border: 2px $perplex-purple solid;
+  border-left: 0;
+  border-radius: 0 2px 2px 0;
+}
+
+span.spinner > .sub:hover,
+span.spinner > .add:hover {
+  background: white;
+  color: $perplex-purple;
+}
+ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+ -webkit-appearance: none;
+}
