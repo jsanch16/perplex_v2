@@ -51,6 +51,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
+    byebug (9.0.5)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -207,6 +208,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
+  byebug
   capybara
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
