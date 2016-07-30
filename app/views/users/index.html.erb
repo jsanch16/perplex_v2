@@ -1,0 +1,11 @@
+<%= provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<!--render automatically looks for a file named 'user' because user was parameter -->
+	<%= render @users %>
+</ul>
+
+<%= will_paginate %>

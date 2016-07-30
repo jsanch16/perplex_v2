@@ -18,6 +18,13 @@ gem 'coffee-rails', '~> 4.1.0'
 #puma web server for production
 gem 'puma'
 
+#gem to make fake users
+gem 'faker'
+
+#gems for pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 #twitter bootstrap gem
 gem 'bootstrap-sass'
 
