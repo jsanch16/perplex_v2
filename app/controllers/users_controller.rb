@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:sucess] = "Profile updated"
+      flash[:success] = "Profile updated"
       redirect_to @user
     else
       render 'edit'
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
 
     #Before filters
 
-    #Confirms a logged in user
+    #Confirms a logged in user, if not logged in redirect to login
     def logged_in_user
       unless logged_in? 
         store_location

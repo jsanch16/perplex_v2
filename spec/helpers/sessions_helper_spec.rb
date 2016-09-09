@@ -11,5 +11,20 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+	let (:user) { FactoryGirl.create(:user) }
+
+	describe "current_user" do
+		before { remember(user) }
+		it "returns the right user when session is nil(user opened a new browser)" do
+			expect(user).to eq current_user
+			expect(logged_in?).to be true
+		end
+
+		it "returns nil when remember_digest is wrong" do
+			user.update_attribute(:remember_digest, User.digest(User.new_token))
+			expect(current_user).to be nil
+		end
+	end
+
+
 end

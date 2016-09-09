@@ -5,6 +5,7 @@ module SessionsHelper
 		session[:user_id] = user.id
 	end
 
+	#remembers user in a persistent session
 	def remember(user)
 		user.remember
 		cookies.permanent.signed[:user_id] = user.id
@@ -30,6 +31,9 @@ module SessionsHelper
 	end
 
 	#Returns the user corresponding to the remember token cookie
+	#if user id is in the session. that user is signed in, so grab
+	#that user. if user id in the cookie, sign in that user and
+	#grab that user. Else, return nil, no current user found
 	def current_user 
 		if (user_id = session[:user_id])
 			@current_user ||= User.find_by(id: user_id)

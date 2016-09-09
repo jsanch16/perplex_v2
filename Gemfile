@@ -51,12 +51,14 @@ gem 'react-rails'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'byebug'
-end
-
-group :test do
-  gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'byebug'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem 'launchy'
 end
 
 group :production do

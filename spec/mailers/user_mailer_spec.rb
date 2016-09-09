@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
   describe "account_activation" do
-    let(:mail) { UserMailer.account_activation }
+    let(:user) { FactoryGirl.create(:user, activation_token: User.new_token) }
+    let(:mail) { UserMailer.account_activation(user) }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Account activation")
