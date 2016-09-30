@@ -1,0 +1,14 @@
+<li id="workout-<%= workout.id %>">
+	<span class="workout-name">
+		<%= link_to workout.name, workout %>
+	</span>
+	<span class="timestamp">
+		Date: <%= workout.date %>
+	</span>
+	<% if current_user?(workout.user) %>
+		<%= link_to "Delete", workout, method: :delete,
+                                   data: { confirm: "You sure?" } %>
+	<% end %>
+</li>
+
+

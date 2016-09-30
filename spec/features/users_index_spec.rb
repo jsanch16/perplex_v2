@@ -1,6 +1,7 @@
 require 'rails_helper'
 describe 'user visits the index page' do
 	subject { page }
+	let (:admin) { FactoryGirl.create(:admin)}
 	before (:all) { 30.times {FactoryGirl.create(:user)} }
 	after(:all)  { User.delete_all }
 
@@ -12,7 +13,7 @@ describe 'user visits the index page' do
 
 	context 'when logged in' do
 		before do
-			log_in_test_user_with_form(user)
+			log_in_test_user_through_form(admin)
 			click_link('Users')
 		end
 

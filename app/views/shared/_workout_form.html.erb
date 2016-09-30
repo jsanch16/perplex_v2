@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="panel with-nav-tabs panel-primary" id="workoutForm">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs">
+          <li><a href="#tabBack" data-toggle="tab">Back</a></li>
+          <li><a href="#tabChest" data-toggle="tab">Chest</a></li>
+          <li class="active"><a href="#tabArms" data-toggle="tab">Arms</a></li>
+          <li><a href="#tabLegs" data-toggle="tab">Legs</a></li>
+          <li><a href="#tabShoulders" data-toggle="tab">Shoulders</a></li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="tab-content">
+          <%= form_for(@workout) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="form-group">
+              <%= label_tag :biceps, "Biceps:", class: 'col-md-4 col-xs-4 control-label' %>
+              <div class="col-md-8 col-xs-8">
+                <%= number_field(:arms, :biceps, value: '0', in: 0..20, step: 1) %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= label_tag :triceps, "Triceps:", class: 'col-md-4 col-xs-4 control-label' %>
+              <div class="col-md-8 col-xs-8">
+                <%= number_field(:arms, :triceps, value: '0', in: 0..20, step: 1) %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= label_tag :any_arms, "Any Arms:", class: 'col-md-4 col-xs-4 control-label' %>
+              <div class="col-md-8 col-xs-8">
+                <%= number_field(:arms, :any, value: '0', in: 0..20, step: 1) %>
+              </div>
+            </div>
+
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+
+            <%= f.label :date %>
+            <%= f.date_field :date, class: 'form-control' %>
+
+            <%= f.label :notes %>
+            <%= f.text_area :notes, size: "24x5", class: 'form-control' %>
+
+            <%= f.submit "Generate Workout", class: "btn btn-primary", id: "generateBtn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,9 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1> Perplex </h1>
+
+<% if logged_in? %>
+	<%= render 'shared/workout_form' %>
+<% else %>
+  <h2>Log in or sign up to create new workouts!</h2>
+  <%= link_to "Log in", login_path %>
+  <%= link_to "Sign up", signup_path %>
+<% end %>

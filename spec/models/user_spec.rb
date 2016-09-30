@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
 														password: "foobar", password_confirmation: "foobar") }
 	subject { @user }
 
-	it { should be_valid }
+	it { is_expected.to be_valid }
 	it { should respond_to(:name) }
 	it { should respond_to(:email) }
 	it { should respond_to(:password_digest) }
@@ -82,6 +82,12 @@ RSpec.describe User, type: :model do
 
 	it "authenticated? should return false for a user with nil digest" do
 		expect(@user.authenticated?(:remember,'')).to eq false
+	end
+
+	it "removes all associated workouts when destroyed" do
+		@user.save
+		@user.workouts.create!(name: 'Arm Day')
+		expect{@user.destroy}.to change(Workout, :count).by(-1)
 	end
 
 end
