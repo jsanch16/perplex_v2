@@ -23,6 +23,11 @@ FactoryGirl.define do
 		user
 	end	
 
+	factory :exercise do
+    name "MyString"
+    description "MyText"
+  end
+
 	factory :workout_with_exercises do
 		
 	end	
