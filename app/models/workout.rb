@@ -1,5 +1,7 @@
 class Workout < ActiveRecord::Base
   belongs_to :user
+  has_many :selected_exercises
+  has_many :exercises, through: :selected_exercises
   scope :ordered, -> { order(date: :desc)}
 
   after_initialize :set_defaults

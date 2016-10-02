@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :selected_exercise do
+    exercise_id 1
+    workout_id 1
+  end
 	factory :user do
 		sequence(:name) { |n| "Person #{n}" }
 		sequence(:email) { |n| "person_#{n}@example.com" }
