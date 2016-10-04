@@ -8,7 +8,7 @@ class WorkoutsController < ApplicationController
 
 	def create
 		@workout = current_user.workouts.build(workout_params)
-		#params[:options].each{ |option| getExrcises(option)}
+		@exercises = get_exercises(params[:options])
 		if @workout.save
 			render 'show'
 		else
@@ -22,6 +22,11 @@ class WorkoutsController < ApplicationController
 		redirect_to request.referrer || root_url
 	end
 
+	def show
+		@workout = current_user.workouts.find_by(id: params[:id])
+		@exercises = @workout.exercises
+	end
+
 	private
 
 	def workout_params
@@ -33,8 +38,12 @@ class WorkoutsController < ApplicationController
 		redirect_to root_url if @workout.nil?
 	end
 
-	def get_exercises(muscle)
-		#options.each
-			#Exercise.where("name = ?", muscle)
+	def get_exercises(options)
+		options.each_with do |muscle, number|
+			#get the ids of all the exercises
+			Exercise.where("name = ?", muscle)
+			
+
+		end
 	end
 end

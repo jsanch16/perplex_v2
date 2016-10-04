@@ -38,3 +38,4 @@ Exercise.create!(name: "Close Grip EZ Bar Curls", description: "Hold an EZ bar w
 Exercise.create!(name: "Dumbbell Shoulder Press", description: "Bring dumbells up to shoulder height. Press up and bring the weights back to shoulder height. Repeat this movement.")
 Exercise.create!(name: "Lat Pulldown", description: "In a seated upright position, pull the bar down to around chest height and bring it up. Repeat this movement.")
 
+#Muscle.create!(name: "Triceps", muscle_group_id: )

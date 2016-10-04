@@ -1,0 +1,5 @@
+<%= link_to exercise.name, exercise %>
+  <% if current_user.admin? %>
+    | <%= link_to "delete", exercise, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+   <% end %>
